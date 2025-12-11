@@ -19,3 +19,24 @@
 #  DEALINGS IN THE SOFTWARE.
 
 import urllib.request
+import time
+import json
+import random
+
+# Server API URLs
+QUERY = "http://localhost:8080/query?id={}"
+
+# 500 server request
+N = 500
+
+def getDataPoint(quote):
+	""" Produce all of the needed values to generate a datapoint """
+	""" ------------- Update this function ------------- """
+	stock = quote['stock']
+	bid_price = float(quote['top_bid']['price'])
+	ask_price = float(quote['top_ask']['price'])
+	price = (bid_price + ask_price)/2
+	return stock, bid_price, ask_price, price
+
+def getRatio(price_a, price_b):
+	""" Get ratio of price_a and price_b """
