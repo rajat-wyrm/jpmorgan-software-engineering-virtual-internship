@@ -1,3 +1,4 @@
+# Task 1: client connecting to server3.py via HTTP
 # Task 1: client requests GET /<key>
 ################################################################################
 #
