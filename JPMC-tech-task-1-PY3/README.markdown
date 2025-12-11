@@ -21,3 +21,26 @@
 <h2 id="task"> Module 1 Task Overview </h2>
 <p>Interface with a stock price data feed and set up your system for analysis of the data</p>
 <p> <b>Aim:</b> We want to process the data feed of stock A and stock B’s price to enable us to analyse when trading for the stock should occur.</p>
+
+<ol>
+	<li>Please clone this repository to start the task</li>
+	<li>Adjust the getRatio, getDataPoint and main functions</li>
+	<li>Bonus: Pass all unit tests and add more to cover edge cases</li>
+	<li>Upload a git patch file as the submission to this task</li>
+	
+</ol>
+
+<h2 id="installation" >Set up / Installation</h2>
+
+<p>In order to get the server and client application code working on your machine, <a href="https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/setup_devenv_m1_v6.pdf">follow the setup here</a></p>
+<p><b>Note:</b>This is the Python 3 version of the JPM 1 exercise. The Python 2.7 version is in <a href="https://github.com/insidesherpa/JPMC-tech-task-1">this other repo</a></p>
+
+<h2>How to Run</h2>
+To start the server, run
+
+	python server3.py
+
+this will create random market called 'test.csv' in your working directory if one does not already exist.
+
+If you encounter an issue with `datautil.parser`, run this command: 
+
