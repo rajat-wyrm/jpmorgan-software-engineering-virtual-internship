@@ -12,3 +12,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 1: HTTP GET/PUT persistence
 - client_test.py passing
 
+## [0.3.0] - 2025-12-17
+
+- Task 1: patch file + bonus tests
+- README + LICENSE drafted
+
