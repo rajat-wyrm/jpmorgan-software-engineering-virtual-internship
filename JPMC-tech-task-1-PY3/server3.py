@@ -1,3 +1,4 @@
+# verified against test.csv snapshots
 # Task 1: persistence server (GET/PUT /<key>)
 # Task 1: persistence server (key/value)
 ################################################################################
