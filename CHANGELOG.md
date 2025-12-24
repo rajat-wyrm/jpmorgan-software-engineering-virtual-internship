@@ -17,3 +17,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 1: patch file + bonus tests
 - README + LICENSE drafted
 
+## [0.4.0] - 2025-12-24
+
+- Task 1 wrap-up
+- patch submission ready
+
