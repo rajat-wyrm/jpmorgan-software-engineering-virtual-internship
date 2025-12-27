@@ -30,3 +30,20 @@
 }
 
 .Stream-button {
+  margin-bottom: 12px;
+}
+
+.Graph {
+  min-height: 50vh;
+  width: 700px;
+  margin-bottom: 12px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
