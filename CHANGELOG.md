@@ -22,3 +22,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 1 wrap-up
 - patch submission ready
 
+## [0.5.0] - 2026-01-05
+
+- Task 2 scaffold
+- React + Perspective setup
+
