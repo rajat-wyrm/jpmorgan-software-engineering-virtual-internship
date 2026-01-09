@@ -126,3 +126,67 @@ def clear_book(buy = None, sell = None):
     return buy, sell
 
 def order_book(orders, book, stock_name):
+    """ Generates a series of order books from a series of orders.  Order books
+        are mutable lists, and mutating them during generation will affect the
+        next turn!
+    """
+    for t, stock, side, order, size in orders:
+        if stock_name == stock:
+            new = add_book(book.get(side, []), order, size)
+            book[side] = sorted(new, reverse = side == 'buy', key = lambda x: x[0])
+        bids, asks = clear_book(**book)
+        yield t, bids, asks
+
+################################################################################
+#
+# Test Data Persistence
+
+def generate_csv():
+    """ Generate a CSV of order history. """
+    with open('test.csv', 'wb') as f:
+        writer = csv.writer(f)
+        for t, stock, side, order, size in orders(market()):
+            if t > MARKET_OPEN + SIM_LENGTH:
+                break
+            writer.writerow([t, stock, side, order, size])
+
+def read_csv():
+    """ Read a CSV or order history into a list. """
+    with open('test.csv', 'rt') as f:
+        for time, stock, side, order, size in csv.reader(f):
+            yield dateutil.parser.parse(time), stock, side, float(order), int(size)
+
+################################################################################
+#
+# Server
+
+class ThreadedHTTPServer(ThreadingMixIn, http.server.HTTPServer):
+    """ Boilerplate class for a multithreaded HTTP Server, with working
+        shutdown.
+    """
+    allow_reuse_address = True
+    def shutdown(self):
+        """ Override MRO to shutdown properly. """
+        self.socket.close()
+        http.server.HTTPServer.shutdown(self)
+
+def route(path):
+    """ Decorator for a simple bottle-like web framework.  Routes path to the
+        decorated method, with the rest of the path as an argument.
+    """
+    def _route(f):
+        setattr(f, '__route__', path)
+        return f
+    return _route
+
+def read_params(path):
+    """ Read query parameters into a dictionary if they are parseable,
+        otherwise returns None.
+    """
+    query = path.split('?')
+    if len(query) > 1:
+        query = query[1].split('&')
+        return dict(map(lambda x: x.split('='), query))
+
+def get(req_handler, routes):
+    """ Map a request to the appropriate route of a routes instance. """
