@@ -1,7 +1,7 @@
 # Task 2 package (bank-merge-co-task-2)
 {
   "name": "bank-merge-co-task-2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@jpmorganchase/perspective": "^0.2.12",
