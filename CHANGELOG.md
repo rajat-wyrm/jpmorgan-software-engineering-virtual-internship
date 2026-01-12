@@ -27,3 +27,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 2 scaffold
 - React + Perspective setup
 
+## [0.5.1] - 2026-01-12
+
+- fix: WebSocket reconnect handling
+- perf: throttle graph updates
+
