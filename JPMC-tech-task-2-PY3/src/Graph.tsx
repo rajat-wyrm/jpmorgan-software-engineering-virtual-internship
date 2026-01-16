@@ -1,3 +1,4 @@
+# Task 2: Perspective graph component
 import React, { Component } from 'react';
 import { Table } from '@jpmorganchase/perspective';
 import { ServerRespond } from './DataStreamer';
