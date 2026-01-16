@@ -25,3 +25,30 @@ interface PerspectiveViewerElement extends HTMLElement {
 class Graph extends Component<IProps, {}> {
   // Perspective table
   table: Table | undefined;
+
+  render() {
+    return React.createElement('perspective-viewer');
+  }
+
+  componentDidMount() {
+    // Get element to attach the table from the DOM.
+    const elem = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
+
+    const schema = {
+      stock: 'string',
+      top_ask_price: 'float',
+      top_bid_price: 'float',
+      timestamp: 'date',
+    };
+
+    if (window.perspective && window.perspective.worker()) {
+      this.table = window.perspective.worker().table(schema);
+    }
+    if (this.table) {
+      // Load the `table` in the `<perspective-viewer>` DOM reference.
+
+      // Add more Perspective configurations here.
+      elem.load(this.table);
+      elem.setAttribute('view', 'y_line');
+      elem.setAttribute('column-pivots', '["stock"]');
+      elem.setAttribute('row-pivots', '["timestamp"]');
