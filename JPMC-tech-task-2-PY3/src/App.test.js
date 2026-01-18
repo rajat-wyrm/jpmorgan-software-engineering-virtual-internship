@@ -1,3 +1,4 @@
+# Task 2 React tests
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
