@@ -1,0 +1,27 @@
+From cdbdb94bcfc86c032ba654950e506e92e422dc9b Mon Sep 17 00:00:00 2001
+From: Aman22sharma <kumaraman.rose@gmail.com>
+Date: Tue, 2 Jun 2020 11:21:00 +0530
+Subject: [PATCH] Create Patch File
+
+---
+ src/App.tsx   | 27 ++++++++++++++++++++-------
+ src/Graph.tsx | 13 +++++++++++--
+ 2 files changed, 31 insertions(+), 9 deletions(-)
+
+diff --git a/src/App.tsx b/src/App.tsx
+index 0728518..7b0ca3f 100755
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -8,6 +8,7 @@ import './App.css';
+  */
+ interface IState {
+   data: ServerRespond[],
++  ShowGraph: boolean,
+ }
+ 
+ /**
+@@ -22,6 +23,7 @@ class App extends Component<{}, IState> {
+       // data saves the server responds.
+       // We use this state to parse data down to the child element (Graph) as element property
+       data: [],
++      ShowGraph: false,
