@@ -52,3 +52,30 @@ index 0728518..7b0ca3f 100755
 +        DataStreamer.getData((serverResponds: ServerRespond[]) => {
 +          // Update the state by creating a new array of data that consists of
 +          // Previous data in the state and the new data from server
++          this.setState({ 
++            data: serverResponds,
++            ShowGraph: true,
++          });
++        });
++        x++;
++        if ( x > 1000 ) {
++          clearInterval(interval);
++        }
++      }, 100);
+   }
+ 
+   /**
+diff --git a/src/Graph.tsx b/src/Graph.tsx
+index ec1430e..d38914a 100644
+--- a/src/Graph.tsx
++++ b/src/Graph.tsx
+@@ -14,7 +14,7 @@ interface IProps {
+  * Perspective library adds load to HTMLElement prototype.
+  * This interface acts as a wrapper for Typescript compiler.
+  */
+-interface PerspectiveViewerElement {
++interface PerspectiveViewerElement extends HTMLElement {
+   load: (table: Table) => void,
+ }
+ 
+@@ -32,7 +32,7 @@ class Graph extends Component<IProps, {}> {
