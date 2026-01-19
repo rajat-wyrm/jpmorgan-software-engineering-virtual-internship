@@ -32,3 +32,8 @@ All notable changes to JPM-Internship will be documented here.
 - fix: WebSocket reconnect handling
 - perf: throttle graph updates
 
+## [0.6.0] - 2026-01-19
+
+- Task 2: Graph component + DataStreamer
+- datafeed Python server
+
