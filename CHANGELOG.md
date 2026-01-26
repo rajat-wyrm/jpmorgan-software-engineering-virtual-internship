@@ -37,3 +37,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 2: Graph component + DataStreamer
 - datafeed Python server
 
+## [0.7.0] - 2026-01-26
+
+- Task 2: glassmorphism styling
+- App.css polished
+
