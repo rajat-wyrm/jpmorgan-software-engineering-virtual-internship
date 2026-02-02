@@ -42,3 +42,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 2: glassmorphism styling
 - App.css polished
 
+## [0.8.0] - 2026-02-02
+
+- Task 3 scaffold
+- DataManipulator + dual-pane Graph
+
