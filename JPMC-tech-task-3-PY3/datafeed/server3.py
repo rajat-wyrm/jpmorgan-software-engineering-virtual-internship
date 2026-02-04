@@ -190,3 +190,67 @@ def read_params(path):
 
 def get(req_handler, routes):
     """ Map a request to the appropriate route of a routes instance. """
+    for name, handler in routes.__class__.__dict__.items():
+        if hasattr(handler, "__route__"):
+            if None != re.search(handler.__route__, req_handler.path):
+                req_handler.send_response(200)
+                req_handler.send_header('Content-Type', 'application/json')
+                req_handler.send_header('Access-Control-Allow-Origin', '*')
+                req_handler.end_headers()
+                params = read_params(req_handler.path)
+                data = json.dumps(handler(routes, params)) + '\n'
+                req_handler.wfile.write(bytes(data,  encoding = 'utf-8'))
+                return
+
+def run(routes, host = '0.0.0.0', port = 8080):
+    """ Runs a class as a server whose methods have been decorated with
+        @route.
+    """
+    class RequestHandler(http.server.BaseHTTPRequestHandler):
+        def log_message(self, *args, **kwargs):
+            pass
+        def do_GET(self):
+            get(self, routes)
+    server = ThreadedHTTPServer((host, port), RequestHandler)
+    thread = threading.Thread(target = server.serve_forever)
+    thread.daemon = True
+    thread.start()
+    print ('HTTP server started on port 8080')
+    while True:
+        from time import sleep
+        sleep(1)
+    server.shutdown()
+    server.start()
+    server.waitForThread()
+
+################################################################################
+#
+# App
+
+ops = {
+    'buy':  operator.le,
+    'sell': operator.ge,
+}
+
+class App(object):
+    """ The trading game server application. """
+
+    def __init__(self):
+        self._book_1    = dict()
+        self._book_2    = dict()
+        self._data_1    = order_book(read_csv(), self._book_1, 'ABC')
+        self._data_2    = order_book(read_csv(), self._book_2, 'DEF')
+        self._rt_start = datetime.now()
+        self._sim_start, _, _  = next(self._data_1)
+        self.read_10_first_lines()
+
+    @property
+    def _current_book_1(self):
+        for t, bids, asks in self._data_1:
+            if REALTIME:
+                while t > self._sim_start + (datetime.now() - self._rt_start):
+                    yield t, bids, asks
+            else:
+                yield t, bids, asks
+
+    @property
