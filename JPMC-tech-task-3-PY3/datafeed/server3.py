@@ -254,3 +254,67 @@ class App(object):
                 yield t, bids, asks
 
     @property
+    def _current_book_2(self):
+        for t, bids, asks in self._data_2:
+            if REALTIME:
+                while t > self._sim_start + (datetime.now() - self._rt_start):
+                    yield t, bids, asks
+            else:
+                yield t, bids, asks
+
+    def read_10_first_lines(self):
+            for _ in iter(range(10)):
+                next(self._data_1)
+                next(self._data_2)
+
+    @route('/query')
+    def handle_query(self, x):
+        """ Takes no arguments, and yields the current top of the book;  the
+            best bid and ask and their sizes
+        """
+        try:
+            t1, bids1, asks1 = next(self._current_book_1)
+            t2, bids2, asks2 = next(self._current_book_2)
+        except Exception as e:
+            print ("error getting stocks...reinitalizing app")
+            self.__init__()
+            t1, bids1, asks1 = next(self._current_book_1)
+            t2, bids2, asks2 = next(self._current_book_2)
+        t = t1 if t1 > t2 else t2
+        print ('Query received @ t%s' % t)
+        return [{
+            'id': x and x.get('id', None),
+            'stock': 'ABC',
+            'timestamp': str(t),
+            'top_bid': bids1 and {
+                'price': bids1[0][0],
+                'size': bids1[0][1]
+            },
+            'top_ask': asks1 and {
+                'price': asks1[0][0],
+                'size': asks1[0][1]
+            }
+        },
+        {
+            'id': x and x.get('id', None),
+            'stock': 'DEF',
+            'timestamp': str(t),
+            'top_bid': bids2 and {
+                'price': bids2[0][0],
+                'size': bids2[0][1]
+            },
+            'top_ask': asks2 and {
+                'price': asks2[0][0],
+                'size': asks2[0][1]
+            }
+        }]
+
+################################################################################
+#
+# Main
+
+if __name__ == '__main__':
+    if not os.path.isfile('test.csv'):
+        print ("No data found, generating...")
+        generate_csv()
+    run(App())
