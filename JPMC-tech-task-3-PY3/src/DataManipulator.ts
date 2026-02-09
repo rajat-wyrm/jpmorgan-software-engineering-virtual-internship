@@ -1,3 +1,4 @@
+# Task 3: row schema + ratio computations
 import { ServerRespond } from './DataStreamer';
 
 export interface Row {
