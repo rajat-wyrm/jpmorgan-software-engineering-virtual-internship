@@ -47,3 +47,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 3 scaffold
 - DataManipulator + dual-pane Graph
 
+## [0.8.1] - 2026-02-09
+
+- fix: ratio computation edge case
+- tests: ratio invariants
+
