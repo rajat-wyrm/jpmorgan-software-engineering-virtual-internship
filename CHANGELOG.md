@@ -52,3 +52,8 @@ All notable changes to JPM-Internship will be documented here.
 - fix: ratio computation edge case
 - tests: ratio invariants
 
+## [0.9.0] - 2026-02-16
+
+- Task 3: pause-on-disconnect
+- datafeed v3 with timestamps
+
