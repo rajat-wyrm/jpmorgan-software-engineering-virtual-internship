@@ -57,3 +57,8 @@ All notable changes to JPM-Internship will be documented here.
 - Task 3: pause-on-disconnect
 - datafeed v3 with timestamps
 
+## [0.9.1] - 2026-02-23
+
+- fix: perspective-viewer css
+- chore: bump @jpmorganchase deps
+
