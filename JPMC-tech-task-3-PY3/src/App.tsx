@@ -37,3 +37,23 @@ class App extends Component<{}, IState> {
         clearInterval(interval);
       }
     }, 100);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          Bank Merge & Co Task 3
+        </header>
+        <div className="App-content">
+          <button className="btn btn-primary Stream-button" onClick={() => {this.getDataFromServer()}}>Start Streaming Data</button>
+          <div className="Graph">
+            {this.renderGraph()}
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default App;
