@@ -62,3 +62,8 @@ All notable changes to JPM-Internship will be documented here.
 - fix: perspective-viewer css
 - chore: bump @jpmorganchase deps
 
+## [1.0.0-rc.1] - 2026-03-02
+
+- All 3 tasks complete
+- README + certificate uploaded
+
