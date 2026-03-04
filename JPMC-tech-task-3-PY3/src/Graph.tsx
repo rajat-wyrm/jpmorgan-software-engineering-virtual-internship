@@ -1,3 +1,4 @@
+# Task 3: Perspective graph (upper + lower)
 # Task 3: dual-pane Perspective graph
 import React, { Component } from 'react';
 import { Table } from '@jpmorganchase/perspective';
