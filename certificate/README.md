@@ -1,11 +1,13 @@
-﻿# Certificate Information
+﻿# JPMorgan Chase Certificate
 
-## JPMorgan Chase Software Engineering Virtual Internship
+## Program Completion
+This directory contains my official JPMorgan Chase Software Engineering Virtual Internship certificate.
 
-This directory contains the official completion certificate.
-
-## Program Details
-- Company: JPMorgan Chase & Co.
+## Verification
+- Name: Rajat
+- Program: Software Engineering Virtual Experience
 - Platform: Forage
-- Tasks: 3 completed
-- Skills: Python, TypeScript, Data Visualization
+- Date: Completed
+
+## Certificate File
+jpmorgan-certificate.pdf
