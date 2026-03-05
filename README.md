@@ -25,6 +25,8 @@ Completed the JPMorgan Chase Software Engineering Virtual Experience Program.
 # Task 1
 cd JPMC-tech-task-1-PY3
 python server3.py
+
+# In another terminal
 python client3.py
 
 # Task 2
