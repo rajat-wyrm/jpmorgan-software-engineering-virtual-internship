@@ -1,2 +1,8 @@
-﻿name: Bug report
-description: Report a bug in the project
+﻿name: Bug Report
+description: Report a bug
+title: "[BUG] "
+labels: bug
+body:
+  - type: textarea
+    label: Description
+    description: What happened?
