@@ -5,29 +5,41 @@
 ![Node](https://img.shields.io/badge/Node-14.x-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## 📋 Overview
-Completed the JPMorgan Chase Software Engineering Virtual Experience Program by building a stock price data interface, analyzing financial data, and visualizing insights using modern development tools.
+## Overview
+Completed the JPMorgan Chase Software Engineering Virtual Experience Program.
 
-## 🏗️ Project Structure
-- **Task 1**: Stock Price Data Feed Interface
-- **Task 2**: Perspective Integration for Data Visualization
-- **Task 3**: Trading Dashboard Development
+## Tasks
+1. **Stock Data Feed** - Python socket server/client
+2. **Perspective Integration** - TypeScript/WebSocket visualization
+3. **Trading Dashboard** - D3.js real-time dashboard
 
-## 🚀 Technologies Used
-- Python 3.8+
-- TypeScript/JavaScript
-- Node.js
-- Perspective
-- WebSockets
+## Structure
+- /JPMC-tech-task-1-PY3 - Python stock data feed
+- /JPMC-tech-task-2-PY3 - Perspective integration
+- /JPMC-tech-task-3-PY3 - Trading dashboard
+- /docs - Documentation
+- /certificate - Completion certificate
 
-## 📊 Key Learnings
-- Real-time data processing
-- Financial data analysis
-- Interactive dashboard development
-- Version control best practices
+## Quick Start
+  ash
+# Task 1
+cd JPMC-tech-task-1-PY3
+python server3.py
+python client3.py
 
-## 🏆 Certificate
-View my completion certificate in the /certificate directory.
+# Task 2
+cd JPMC-tech-task-2-PY3
+npm install
+npm start
 
-## 📝 License
-This project is licensed under the MIT License.
+# Task 3
+cd JPMC-tech-task-3-PY3
+npm install
+npm start
+  
+
+## Certificate
+View in /certificate directory.
+
+## License
+MIT
