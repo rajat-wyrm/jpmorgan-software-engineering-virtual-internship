@@ -1,1 +1,3 @@
-﻿date,price,volume
+﻿timestamp,symbol,price,volume,change
+2024-03-05 09:30:00,JPM,145.67,5432,1.23
+2024-03-05 09:30:00,GS,389.21,2156,-0.45
