@@ -4,11 +4,13 @@ type Props = {
   data: any[];
 };
 
-export const Graph: React.FC<Props> = ({ data }) => {
+const Graph: React.FC<Props> = ({ data }) => {
   return (
     <div>
-      <h2>Stock Price Chart</h2>
+      <h2>Stock Price Visualization</h2>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
+
+export default Graph;
