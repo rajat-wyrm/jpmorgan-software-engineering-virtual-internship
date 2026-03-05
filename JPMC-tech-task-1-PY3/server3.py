@@ -19,97 +19,44 @@ class StockDataServer:
         self.server_socket.bind((self.host, self.port))
         self.server_socket.listen(5)
         self.running = True
-        
-        print(f"Stock data server started on {self.host}:{self.port}")
-        
-        accept_thread = threading.Thread(target=self.accept_clients)
-        accept_thread.daemon = True
-        accept_thread.start()
-        
-        broadcast_thread = threading.Thread(target=self.broadcast_data)
-        broadcast_thread.daemon = True
-        broadcast_thread.start()
+        print(f"Server started on {self.host}:{self.port}")
+        threading.Thread(target=self.accept_clients, daemon=True).start()
+        threading.Thread(target=self.broadcast_data, daemon=True).start()
         
     def accept_clients(self):
         while self.running:
             try:
-                client_socket, address = self.server_socket.accept()
-                self.clients.append(client_socket)
-                print(f"New client connected: {address}")
+                client, addr = self.server_socket.accept()
+                self.clients.append(client)
+                print(f"Client connected: {addr}")
+            except: break
                 
-                client_thread = threading.Thread(
-                    target=self.handle_client,
-                    args=(client_socket, address)
-                )
-                client_thread.daemon = True
-                client_thread.start()
-            except:
-                break
-                
-    def handle_client(self, client_socket, address):
-        try:
-            while self.running:
-                data = client_socket.recv(1024).decode().strip()
-                if data:
-                    print(f"Received from {address}: {data}")
-                    if data.lower() == 'quit':
-                        break
-        except:
-            pass
-        finally:
-            client_socket.close()
-            if client_socket in self.clients:
-                self.clients.remove(client_socket)
-            print(f"Client disconnected: {address}")
-            
-    def generate_stock_data(self):
+    def generate_data(self):
         data = []
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        
-        for symbol in self.stock_symbols:
-            price = round(random.uniform(100, 200), 2)
-            volume = random.randint(1000, 10000)
-            change = round(random.uniform(-5, 5), 2)
-            
-            data.append({
-                'timestamp': timestamp,
-                'symbol': symbol,
-                'price': price,
-                'volume': volume,
-                'change': change
-            })
-        return data
+        ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        for sym in self.stock_symbols:
+            data.append(f"{ts},{sym},{random.uniform(100,200):.2f},{random.randint(1000,10000)},{random.uniform(-5,5):.2f}")
+        return "\n".join(data)
         
     def broadcast_data(self):
         while self.running:
             if self.clients:
-                stock_data = self.generate_stock_data()
-                output = "timestamp,symbol,price,volume,change\n"
-                for item in stock_data:
-                    output += f"{item['timestamp']},{item['symbol']},{item['price']},{item['volume']},{item['change']}\n"
-                
+                data = self.generate_data()
                 for client in self.clients[:]:
-                    try:
-                        client.send(output.encode())
-                    except:
-                        self.clients.remove(client)
+                    try: client.send(data.encode())
+                    except: self.clients.remove(client)
             time.sleep(2)
             
     def stop(self):
         self.running = False
-        for client in self.clients:
-            try:
-                client.close()
-            except:
-                pass
-        if self.server_socket:
-            self.server_socket.close()
+        for c in self.clients: c.close()
+        if self.server_socket: self.server_socket.close()
         print("Server stopped")
 
 if __name__ == "__main__":
     server = StockDataServer()
     try:
         server.start()
-        input("Press Enter to stop the server...\n")
+        input("Press Enter to stop\n")
     finally:
         server.stop()
