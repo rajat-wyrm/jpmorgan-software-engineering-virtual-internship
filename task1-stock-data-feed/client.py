@@ -1,12 +1,8 @@
-﻿import json
-import urllib.request
+﻿def getDataPoint(quote):
+    stock = quote['stock']
+    bid_price = float(quote['top_bid']['price'])
+    ask_price = float(quote['top_ask']['price'])
 
-QUERY = "http://localhost:8080/query?id={}"
-
-def getDataPoint(quote):
-    stock = quote["stock"]
-    bid_price = float(quote["top_bid"]["price"])
-    ask_price = float(quote["top_ask"]["price"])
     price = (bid_price + ask_price) / 2
     return stock, bid_price, ask_price, price
 
@@ -14,12 +10,3 @@ def getRatio(price_a, price_b):
     if price_b == 0:
         return None
     return price_a / price_b
-
-if __name__ == "__main__":
-    for _ in range(10):
-        response = urllib.request.urlopen(QUERY.format(_))
-        quotes = json.loads(response.read())
-
-        for quote in quotes:
-            stock, bid, ask, price = getDataPoint(quote)
-            print(f"{stock} bid:{bid} ask:{ask} price:{price}")
