@@ -1,0 +1,18 @@
+﻿# JPMorgan Chase Certificate
+
+## Important
+Please replace this placeholder file with your actual JPMorgan Chase Software Engineering Virtual Internship certificate PDF.
+
+## File Naming
+The certificate file should be named: jpmorgan-certificate.pdf
+
+## Verification
+This certificate verifies completion of:
+- Task 1: Stock Price Data Feed Interface
+- Task 2: Perspective Integration
+- Task 3: Trading Dashboard Development
+
+## Program Details
+- Provider: JPMorgan Chase & Co.
+- Platform: Forage
+- Date: [Insert your completion date]
