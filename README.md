@@ -1,8 +1,8 @@
 ﻿# JPMorgan Chase Software Engineering Virtual Experience
 
-This repository contains my work from the JPMorgan Chase Software Engineering Virtual Experience Program on Forage.
+Solutions and implementations from the JPMorgan Chase Software Engineering Virtual Experience Program (Forage).
 
 Tasks include:
-- Interfacing with stock price data feeds
+- Stock price data feed integration
 - Financial data analysis
 - Data visualization for traders
