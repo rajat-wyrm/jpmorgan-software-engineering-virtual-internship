@@ -1,0 +1,17 @@
+﻿{
+  "routes": [
+    {
+      "method": "POST",
+      "endpoint": "/v1/calculate",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "{\"incentiveAmount\": 5.00, \"incentiveType\": \"BONUS\", \"applied\": true}",
+          "headers": {
+            "Content-Type": "application/json"
+          }
+        }
+      ]
+    }
+  ]
+}
