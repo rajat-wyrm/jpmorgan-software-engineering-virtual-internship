@@ -1,8 +1,8 @@
-﻿# Architecture
+﻿# System Architecture
 
-The system processes simulated stock market data and visualizes discrepancies between exchanges.
+The system processes financial data and visualizes price discrepancies.
 
 Components:
-- Data feed interface
-- Processing logic
-- Visualization layer
+- Data Feed Client
+- Processing Logic
+- Visualization Layer
