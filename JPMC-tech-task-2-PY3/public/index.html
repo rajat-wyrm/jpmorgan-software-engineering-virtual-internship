@@ -1,1 +1,54 @@
-﻿<html><body>Task 2</body></html>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPMorgan Chase - Perspective Integration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@finos/perspective"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer-datagrid"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@finos/perspective-viewer-d3fc"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JPMorgan Chase - Task 2</h1>
+            <h2>Perspective Integration for Stock Data Visualization</h2>
+        </header>
+        
+        <div class="controls">
+            <button id="connect-btn" class="btn-primary">Connect to Server</button>
+            <button id="disconnect-btn" class="btn-secondary">Disconnect</button>
+            <select id="symbol-select">
+                <option value="JPM">JPMorgan Chase (JPM)</option>
+                <option value="GS">Goldman Sachs (GS)</option>
+                <option value="MS">Morgan Stanley (MS)</option>
+                <option value="BAC">Bank of America (BAC)</option>
+                <option value="C">Citigroup (C)</option>
+            </select>
+        </div>
+        
+        <div class="dashboard">
+            <perspective-viewer id="view1" class="perspective-viewer"></perspective-viewer>
+        </div>
+        
+        <div class="stats" id="stats-panel">
+            <div class="stat-card">
+                <h3>Connected</h3>
+                <p id="connection-status">Disconnected</p>
+            </div>
+            <div class="stat-card">
+                <h3>Data Points</h3>
+                <p id="data-count">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Last Update</h3>
+                <p id="last-update">-</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
