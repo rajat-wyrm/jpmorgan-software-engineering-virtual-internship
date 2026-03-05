@@ -1,4 +1,7 @@
-﻿# JPMorgan Chase Software Engineering Virtual Internship
+# JPMorgan Chase Software Engineering Virtual Internship
+
+![GitHub last commit](https://img.shields.io/github/last-commit/rajat-wyrm/jpmorgan-software-engineering-virtual-internship) 
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rajat-wyrm/jpmorgan-software-engineering-virtual-internship)
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.0+-blue)
