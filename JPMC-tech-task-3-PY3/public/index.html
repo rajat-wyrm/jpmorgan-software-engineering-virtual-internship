@@ -1,1 +1,73 @@
-﻿<html><body>Dashboard</body></html>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPMorgan Chase - Trading Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <h1>📊 JPMorgan Chase Trading Dashboard</h1>
+            <div class="nav-controls">
+                <span id="live-indicator" class="live-indicator">● LIVE</span>
+                <button id="refresh-btn" class="btn-icon">🔄</button>
+            </div>
+        </nav>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="symbol-list">
+                    <h3>Stocks</h3>
+                    <ul id="symbol-list">
+                        <li class="symbol-item active" data-symbol="JPM">JPMorgan Chase (JPM)</li>
+                        <li class="symbol-item" data-symbol="GS">Goldman Sachs (GS)</li>
+                        <li class="symbol-item" data-symbol="MS">Morgan Stanley (MS)</li>
+                        <li class="symbol-item" data-symbol="BAC">Bank of America (BAC)</li>
+                        <li class="symbol-item" data-symbol="C">Citigroup (C)</li>
+                    </ul>
+                </div>
+                
+                <div class="quick-stats">
+                    <h3>Market Overview</h3>
+                    <div class="stat-item">
+                        <span>DJIA</span>
+                        <span class="positive">+0.8%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>S&P 500</span>
+                        <span class="positive">+0.5%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>NASDAQ</span>
+                        <span class="negative">-0.2%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <div class="chart-grid">
+                    <div class="chart-card">
+                        <h3>Price Chart</h3>
+                        <div id="price-chart" class="chart"></div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3>Volume Chart</h3>
+                        <div id="volume-chart" class="chart"></div>
+                    </div>
+                    
+                    <div class="chart-card full-width">
+                        <h3>Real-Time Data</h3>
+                        <div id="data-grid" class="data-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="dashboard.js"></script>
+</body>
+</html>
