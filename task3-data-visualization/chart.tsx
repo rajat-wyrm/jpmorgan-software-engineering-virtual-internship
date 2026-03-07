@@ -1,6 +1,0 @@
-﻿export function calculateRatio(priceA:number, priceB:number){
-    if(priceB===0){
-        return null
-    }
-    return priceA/priceB
-}
