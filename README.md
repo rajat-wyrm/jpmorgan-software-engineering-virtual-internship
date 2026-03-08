@@ -51,7 +51,9 @@ Make a contribution to Perspective or other projects backlogs
 ## 🏆 My Certificate of Completion
 
 My official completion certificate is available in this repository:
-- jpmorgan-certificate.pdf
+
+![Certificate of completion ](https://github.com/user-attachments/assets/5d15fa6b-c078-405a-933b-30ee988dc65f)
+
 
 ---
 
