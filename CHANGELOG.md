@@ -67,3 +67,8 @@ All notable changes to JPM-Internship will be documented here.
 - All 3 tasks complete
 - README + certificate uploaded
 
+## [1.0.0-rc.2] - 2026-03-09
+
+- Final polish + dark mode
+- Task 3 graph refinements
+
