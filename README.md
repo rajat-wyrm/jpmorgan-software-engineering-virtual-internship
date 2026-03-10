@@ -74,7 +74,7 @@ JPMorgan-Chase-Virtual-Internship/
 
 MIT License
 
-Copyright (c) 2024 Rajat Kumar
+Copyright (c) 2026 Rajat Kumar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
