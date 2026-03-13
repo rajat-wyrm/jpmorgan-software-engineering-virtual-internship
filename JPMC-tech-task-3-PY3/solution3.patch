@@ -1,0 +1,29 @@
+From 8756e143807fc64fa74c6af3afd9bb66fc339b20 Mon Sep 17 00:00:00 2001
+From: Joe Ferrer <joe@insidesherpa.com>
+Date: Fri, 18 Oct 2019 13:09:54 +0800
+Subject: [PATCH] Make model answer
+
+---
+ src/DataManipulator.ts | 35 ++++++++++++++++++++++++-----------
+ src/Graph.tsx          | 28 ++++++++++++++++------------
+ 2 files changed, 40 insertions(+), 23 deletions(-)
+
+diff --git a/src/DataManipulator.ts b/src/DataManipulator.ts
+index f6b15ff..2f995ed 100644
+--- a/src/DataManipulator.ts
++++ b/src/DataManipulator.ts
+@@ -1,20 +1,33 @@
+ import { ServerRespond } from './DataStreamer';
+ 
++/* Row to be inserted to Perspective Table */
+ export interface Row {
+-  stock: string,
+-  top_ask_price: number,
+-  timestamp: Date,
++  price_abc: number,    // (ask + bid) / 2
++  price_def: number,
++  ratio: number,        // price ABC / price DEF
++  timestamp: Date,      // data timestamp for X axis
++  upper_bound: number,  // + 0.05
++  lower_bound: number,  // - 0.05
++  trigger_alert: number | undefined,
