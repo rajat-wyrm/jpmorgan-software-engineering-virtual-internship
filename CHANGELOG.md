@@ -72,3 +72,8 @@ All notable changes to JPM-Internship will be documented here.
 - Final polish + dark mode
 - Task 3 graph refinements
 
+## [1.0.0] - 2026-03-16
+
+- Internship submission ready
+- All patches verified
+
