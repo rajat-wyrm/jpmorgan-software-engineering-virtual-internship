@@ -77,3 +77,8 @@ All notable changes to JPM-Internship will be documented here.
 - Internship submission ready
 - All patches verified
 
+## [1.0.1] - 2026-03-22
+
+- docs: refine README
+- fix: certificate filename
+
