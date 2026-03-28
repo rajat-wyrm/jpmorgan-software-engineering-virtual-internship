@@ -31,3 +31,36 @@ Interface with a stock price data feed and set your system for analysis of data
 **Technologies:** Python3, Git, Basic Programming
 **Data Type:** Financial Data
 
+### 2. Use JPMorgan Chase frameworks and tools
+Implement the perspective open source code in preparation for data visualization
+
+**Technologies:** React js, TypeScript, Web Applications
+
+### 3. Display data visually for traders
+Use Perspective to create the chart for the trader's dashboard
+
+**Technologies:** Technical Communications, Financial Analysis, Web Applications
+
+### 4. Bonus task: Open source contribution
+Make a contribution to Perspective or other projects backlogs
+
+**Focus:** Contributing to the Open Source Community
+
+---
+
+## 🏆 My Certificate of Completion
+
+My official completion certificate is available in this repository:
+
+![Certificate of completion ](https://github.com/user-attachments/assets/5d15fa6b-c078-405a-933b-30ee988dc65f)
+
+
+---
+
+## 📁 Repository Structure
+
+JPMorgan-Chase-Virtual-Internship/
+- JPMC-tech-task-1-PY3/     # Stock price data feed interface
+- JPMC-tech-task-2-PY3/     # Perspective framework implementation
+- JPMC-tech-task-3-PY3/     # Trading dashboard visualization
+- create_patch_file_v3a.pdf
