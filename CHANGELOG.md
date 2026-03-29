@@ -82,3 +82,8 @@ All notable changes to JPM-Internship will be documented here.
 - docs: refine README
 - fix: certificate filename
 
+## [1.1.0] - 2026-03-29
+
+- Post-submission cleanup
+- LICENSE year update
+
